@@ -30,12 +30,19 @@ def mask_sensitive(text: str, api_key: str = "") -> str:
 def prepare_input(text: str, api_key: str, safe_mode: bool) -> tuple[str, bool]:
     # 먼저 마스킹하여, 줄 수 제한으로 잘린 비밀키 조각도 전송하지 않게 합니다.
     protected = mask_sensitive(text, api_key)
+
     if safe_mode:
         limited = "".join(protected.splitlines(keepends=True)[:200])[:20000]
         truncated = len(limited) < len(protected)
+
         if truncated:
-            limited += "\n[入力の残りは省略。表示された変更だけを要約してください。]"
+            limited += "\n[입력의 나머지는 생략되었습니다. 표시된 변경 사항만 요약하세요.]"
+
         return limited, truncated
+
     if len(protected) > 100000:
-        raise RuntimeError("変更入力が大きすぎます。--safe-modeを指定して再実行してください。")
+        raise RuntimeError(
+            "변경 입력이 너무 큽니다. --safe-mode를 지정하여 다시 실행해 주세요."
+        )
+
     return protected, False
