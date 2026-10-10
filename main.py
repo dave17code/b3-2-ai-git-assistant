@@ -14,7 +14,7 @@ from src.safety import mask_sensitive, prepare_input
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Git 변경 사항 기반 커밋/PR 초안 생성기")
     parser.add_argument("command", choices=["commit", "pr"], help="생성할 초안 종류")
-    parser.add_argument("--model", "-model", default="gpt-4.1-mini", help="모델명 (기본: gpt-4.1-mini)")
+    parser.add_argument("--model", "-model", default="gpt-5.6-luna", help="모델명 (기본: gpt-5.6-luna)")
     parser.add_argument("--temperature", "-temperature", type=float, default=0.2, help="0~2 (기본: 0.2)")
     parser.add_argument("--max-tokens", "-max-tokens", type=int, default=1200, help="생성 토큰 상한 (기본: 1200)")
     parser.add_argument("--safe-mode", "-safe-mode", action="store_true", help="전송 입력을 최대 200줄/20,000자로 제한")
