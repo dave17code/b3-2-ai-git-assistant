@@ -25,9 +25,10 @@ def square(number: int) -> int:
     return number ** 2
 
 
-def is_even(number: int) -> bool:
-    """짝수이면 True, 홀수이면 False를 반환합니다. 0은 짝수입니다."""
-    return number % 2 == 0
+def is_even(number: int, *numbers: int) -> bool:
+    """전달받은 정수가 모두 짝수이면 True를 반환합니다."""
+    # 하나라도 홀수이면 all()의 결과가 False가 됩니다.
+    return all(value % 2 == 0 for value in (number, *numbers))
 
 
 def larger_number(a: int, b: int) -> int:
