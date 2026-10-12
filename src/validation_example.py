@@ -14,9 +14,10 @@ def subtract_numbers(a: int, b: int) -> int:
     return a - b
 
 
-def multiply_numbers(a: int, b: int) -> int:
-    """두 정수의 곱을 반환합니다. 예: multiply_numbers(4, 3)은 12입니다."""
-    return a * b
+def multiply_numbers(a: int, b: int, c: int = 1) -> int:
+    """두 정수 또는 세 정수의 곱을 반환합니다."""
+    # 세 번째 숫자를 생략하면 기존 두 정수의 곱과 같습니다.
+    return a * b * c
 
 
 def square(number: int) -> int:
