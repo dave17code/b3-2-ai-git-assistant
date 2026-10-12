@@ -46,8 +46,8 @@ def reverse_text(text: str) -> str:
 
 
 def to_uppercase(text: str) -> str:
-    """영문자를 대문자로 바꿉니다. 예: 'hello'는 'HELLO'가 됩니다."""
-    return text.upper()
+    """문자열의 양끝 공백을 제거한 뒤 영문자를 대문자로 바꿉니다."""
+    return text.strip().upper()
 
 
 def count_items(items: list[int]) -> int:
