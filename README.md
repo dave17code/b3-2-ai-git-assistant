@@ -301,6 +301,5 @@ PR을 병합하면 최종 코드와 브랜치 작업 기록을 함께 확인할 
 ### API 규격 참고
 
 - [OpenAI Chat Completions API](https://developers.openai.com/api/reference/resources/chat/subresources/completions/methods/create)
-- [GPT-4.1 mini](https://developers.openai.com/api/docs/models/gpt-4.1-mini)
 
 구현 시 공식 문서에서 endpoint, temperature, max_completion_tokens, JSON Schema 지원을 확인했습니다.
