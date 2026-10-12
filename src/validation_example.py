@@ -1,6 +1,12 @@
-def add_numbers(a: int, b: int) -> int:
-    """두 정수의 합을 반환합니다. 예: add_numbers(5, 3)은 8입니다."""
-    return a + b
+def add_numbers(
+    a: int,
+    b: int,
+    *numbers: int,
+    initial: int = 0,
+) -> int:
+    """두 개 이상의 정수의 합에 시작값 initial을 더해 반환합니다."""
+    # initial을 생략하면 기존처럼 전달받은 숫자만 합산합니다.
+    return a + b + sum(numbers) + initial
 
 
 def subtract_numbers(a: int, b: int) -> int:
