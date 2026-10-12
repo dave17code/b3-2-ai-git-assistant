@@ -40,8 +40,11 @@ def absolute_value(number: int) -> int:
     return abs(number)
 
 
-def reverse_text(text: str) -> str:
-    """문자열을 역순으로 반환합니다. 예: 'abc'는 'cba'가 됩니다."""
+def reverse_text(text: str, by_words: bool = False) -> str:
+    """문자열을 뒤집으며, by_words=True이면 단어 순서만 뒤집습니다."""
+    # 단어 모드에서는 공백으로 나눈 단어를 역순으로 연결합니다.
+    if by_words:
+        return " ".join(text.split()[::-1])
     return text[::-1]
 
 
